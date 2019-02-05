@@ -14,10 +14,8 @@ Redmine::Plugin.register :redmine_ldap_sync do
                     :html => {:class => 'icon icon-ldap-sync'}
 end
 
-RedmineApp::Application.config.after_initialize do
-  require_dependency 'ldap_sync/core_ext'
-  require_dependency 'ldap_sync/infectors'
-end
+require_dependency 'ldap_sync/core_ext'
+require_dependency 'ldap_sync/infectors'
 
 # hooks
 require_dependency 'ldap_sync/hooks'
